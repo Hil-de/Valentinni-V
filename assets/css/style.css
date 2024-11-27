@@ -46,9 +46,9 @@
                     margin-left: 1.5rem;
                     text-decoration: none;
                     color: white;
-                    font-size: 12px;
+                    font-size: 11px;
                     font-family: var(--s-font);
-                    letter-spacing: 2px;
+                    letter-spacing: 1px;
                     font-weight: 600;
                     text-decoration: none;
                     text-transform: capitalize;
@@ -187,8 +187,8 @@
                                     /* margin-right: 20px; */
                                     /* padding: 10px; */
 
-                                    width: 100px;
-                                    height: 100px;
+                                    /* width: 100px; */
+                                    /* height: 100px; */
 
                                     img {
                                         object-fit: cover;
@@ -344,6 +344,13 @@
                                         background-color: white;
                                     }
 
+                                    &:active {
+                                        background-color: rgb(235, 235, 235);
+                                        color: white;
+                                        text-shadow: 0 0 1px white;
+                                        transition: none;
+                
+                                    }
                                 }
                             }
                         }
@@ -364,7 +371,7 @@
                             font-size: 25px;
                             font-weight: bold;
 
-                            text-align: left;
+                            /* text-align: left; */
 
                             .cart-empty-btn {
                                 margin-top: 20px;
@@ -385,6 +392,14 @@
 
                                 &:hover {
                                     background-color: rgb(224, 220, 220);
+                                }
+
+                                &:active {
+                                    background-color: rgb(235, 235, 235);
+                                    color: black;
+                                    text-shadow: 0 0 1px white;
+                                    transition: none;
+            
                                 }
                             }
                         }
