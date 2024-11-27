@@ -92,18 +92,8 @@
                     "material": "Gold Vermeil",
                     "img": "/assets/img/rings/1_DailyStackerRing_V_Hero_Front.jpg",
                     "hoverImg": "/assets/img/rings/rings_hover_img/2_DailyStackerRing_V_Solo_Fair.jpg"
-                },
-                {
-                    "id": 9,
-                    "name": "Diamonds Band",
-                    "category": "Anillos",
-                    "price": "$500",
-                    "detail": "Una banda elegante adornada con diamantes para una apariencia sofisticada.",
-                    "description": "Perfecta para ocasiones especiales o como un regalo significativo.",
-                    "material": "14k Yellow Gold",
-                    "img": "/assets/img/rings/0-DiamondsBand-14k-Front_196.jpg",
-                    "hoverImg": "/assets/img/rings/rings_hover_img/1-DiamondsBand-14K-Stack1_023.jpg"
                 }
+
             ]
         },
         {

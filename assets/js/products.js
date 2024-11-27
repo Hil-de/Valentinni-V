@@ -6,12 +6,14 @@ const pageDescriptionElement = document.querySelector('.title-container p');
 // Obtener el nombre de la página actual desde la URL
 const currentPage = window.location.pathname.split('/').pop();  // Extrae el nombre del archivo, ej. 'rings.html' o 'necklaces.html'
 
+
+// seleccion de la categoria dependiendo de la pagina. 
 let category = "";
 
 if (currentPage === "rings.html") {
-    category = "Anillos";  // Si estamos en 'rings.html', mostramos los productos de Anillos
+    category = "Anillos";  
 } else if (currentPage === "necklaces.html") {
-    category = "Collares";  // Si estamos en 'necklaces.html', mostramos los productos de Collares
+    category = "Collares";  
 } else if (currentPage === "bracelets.html"){
     category = "Brazaletes";
 } else if (currentPage === "earrings.html"){

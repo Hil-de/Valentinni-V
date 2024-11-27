@@ -50,6 +50,7 @@ productsList.addEventListener('click', e => {
             quantity: 1,
             title: product.querySelector('.prod-name').textContent,
             price: product.querySelector('.prod-price').textContent,
+            image: product.querySelector('.prod-img-content img').src,
         };
 
         const exits = allProducts.some(
@@ -76,7 +77,7 @@ productsList.addEventListener('click', e => {
 
 
 rowProduct.addEventListener('click', e => {
-	if (e.target.classList.contains('material-symbols-outlined')){
+	if (e.target.classList.contains('remove')){
         const product = e.target.closest('.cart-products');
         const title = product.querySelector('.titulo-producto').textContent;
 
@@ -87,6 +88,21 @@ rowProduct.addEventListener('click', e => {
         console.log(allProducts);
 
         showHTML();
+    }
+
+    // Modificar la cantidad de productos
+    if (e.target.classList.contains('plus') || e.target.classList.contains('minus')) {
+        const product = e.target.closest('.cart-products');
+        const title = product.querySelector('.titulo-producto').textContent;
+        const currentProduct = allProducts.find(p => p.title === title.trim());
+
+        if (e.target.classList.contains('plus')) {
+            currentProduct.quantity++;
+        } else if (e.target.classList.contains('minus') && currentProduct.quantity > 1) {
+            currentProduct.quantity--;
+        }
+
+        showHTML();  // Actualiza la vista del carrito
     }
 });
 
@@ -118,20 +134,27 @@ const showHTML = () => {
         containerProduct.classList.add('cart-products');
 
         containerProduct.innerHTML = `
-            <div class="info-cart-products">
-                <span class="cantidad-productos">${product.quantity}</span>
-                <p class="titulo-producto">
-                    ${product.title}
-                </p>
-                <span class="precio-carrito">
-                    ${product.price}
-                </span>
-            </div>
-            <div class="close-icon-container">
-                <span class="material-symbols-outlined">
-                    close
-                </span>
-            </div>
+                <div class="info-cart-products">
+                    <div class="img-producto">
+                        <img src="${product.image}" alt="${product.title}">
+                    </div>
+                </div>
+
+                <div class="info-container">
+                    <div class="info-cart-products">
+                        <p class="titulo-producto">${product.title}</p>
+                        <span class="precio-carrito">${product.price}</span>
+                    </div>
+                    <div class="info-cart-products">
+                        <div class="control">
+                            <button class="btn minus">-</button>
+                            <span class="cantidad-productos">${product.quantity}</span>
+                            <button class="btn plus">+</button>
+                        </div>
+                        <span class="remove">Remove</span>
+                    </div>
+                </div>
+
         `;
 
         rowProduct.append(containerProduct);

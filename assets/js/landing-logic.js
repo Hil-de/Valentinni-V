@@ -16,11 +16,22 @@ window.addEventListener('scroll', function () {
 
 // ocultar carrito de compras
 
+// const btnCart = document.querySelector('.btn-cart')
+// const containerCartProducts = document.querySelector('.container-cart-products') 
+
+// btnCart.addEventListener('click', () => {
+// containerCartProducts.classList.toggle('hidden-cart')
+// })
+
 const btnCart = document.querySelector('.btn-cart')
 const containerCartProducts = document.querySelector('.container-cart-products') 
 
+console.log('Botón carrito:', btnCart);
+console.log('Contenedor carrito:', containerCartProducts);
+
 btnCart.addEventListener('click', () => {
-containerCartProducts.classList.toggle('hidden-cart')
+    console.log('Clic detectado');
+    containerCartProducts.classList.toggle('hidden-cart')
 })
 
 /* ========================= */
