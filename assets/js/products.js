@@ -18,6 +18,8 @@ if (currentPage === "rings.html") {
     category = "Brazaletes";
 } else if (currentPage === "earrings.html"){
     category = "Pendientes";
+} else if (currentPage === "all-products.html"){
+    category = "All"
 }
 
 fetch('/assets/json/produts.json')

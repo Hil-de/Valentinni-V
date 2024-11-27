@@ -18,10 +18,10 @@
         <nav class="navbar">
             <div class="nav_items_container">
                 <div class="a_container">
-                    <a href="assets/pages/bracelets.html">Brazaletes</a>
-                    <a href="assets/pages/rings.html">Anillos</a>
-                    <a href="assets/pages/earrings.html">Pendientes</a>
-                    <a href="assets/pages/necklaces.html">Collares</a>
+                    <a href="/assets/pages/bracelets.html">Brazaletes</a>
+                    <a href="/assets/pages/rings.html">Anillos</a>
+                    <a href="/assets/pages/earrings.html">Pendientes</a>
+                    <a href="/assets/pages/necklaces.html">Collares</a>
                 </div>
                 <div class="navbar_logo_container">
                     <a href="/index.html" class="logo">Valentinni</a>
@@ -38,44 +38,66 @@
                         </span>
                     </div>
                     <div class="shopping-icon-container">
-                        <span class="material-symbols-outlined">
-                            shopping_bag
-                        </span>
-
-
-                        <!--Carrito de compras-->
-                        <div class="count-products">
-                            <span id="contador">0</span>
+                        <div class="btn-cart">
+                            <span class="material-symbols-outlined">
+                                shopping_bag
+                            </span>
+                            <div class="count-products">
+                                <span id="contador">0</span>
+                            </div>
                         </div>
+                        <!--Carrito de compras-->
                         <div class="container-cart-products hidden-cart">
                             <div class="row-product hidden">
                                 <div class="cart-products">
 
 
-                                    <div class="info-cart-products">
-                                        <span class="cantidad-productos">1</span>
-                                        <p class="titulo-producto">
-                                            Zapatos Nike 
-                                        </p>
-                                        <span class="precio-carrito">
-                                            $100
-                                        </span>
+                                    <!-- Aqui dentro se genenerara algo como esto -->
+                                    <!-- <div class="img-producto">
+                                        <img src="/assets/img/bracelets/0-14KLETTERS-14kLetterBraceletA-14K-TopDown_024.webp"
+                                            alt="">
                                     </div>
-                                    <div class="close-icon">
-                                        <span class="material-symbols-outlined">
-                                            close
-                                        </span>
-                                    </div>
-
+                                    <div class="info-container">
+                                        <div class="info-cart-products">
+                                            <p id="title" class="titulo-producto">
+                                                Letter Bracelet
+                                            </p>
+                                            <span class="precio-carrito">
+                                                $170
+                                            </span>
+                                        </div>
+                                        <div class="info-cart-products">
+                                            <div class="control">
+                                                <button id="minus" class="btn">-</button>
+                                                <span class="cantidad-productos">1</span>
+                                                <button id="plus" class="btn">+</button>
+                                            </div>
+                                            <span class="remove">
+                                                Remove
+                                            </span>
+                                        </div>
+                                    </div> -->
 
                                 </div>
                             </div>
-                            <div class="cart-total hidden">
-                                <h3>Total:</h3>
-                                <span class="total-pagar">$100</span>
+
+                            <div class="cart-empty">
+                                <p>Su bolsa está vacía. Compra nuestros favoritos.</p>
+                                <a href="/assets/pages/all-products.html"><button class="cart-empty-btn"> Comprar </button></a>
                             </div>
-                            <p class="cart-empty">El carrito está vacío</p>
+
+                            <div class="cart-total  hidden">
+                                <div class="cont">
+                                    <h3>Total Estimado</h3>
+                                    <span class="total-pagar">$</span>
+                                </div>
+                                <div class="cont-btn">
+                                    <button>Proceder al pago</button>
+                                </div>
+                            </div>
                         </div>
+
+
 
                         <!--Carrito de compras-->
                     </div>
