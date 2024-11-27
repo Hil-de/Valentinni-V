@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-    /*colors*/
-    --primary_color: black;
-    --ter_color: #555555;
-    --benefits_background: #FAFAFA;
-    /*fonts*/
-    --primary_font: Raleway;
-    --sec_font: Montserrat;
-    --h_font: 'Bebas Neue';
+    /* colores */
+    --p-color: #555555;
+    --s-color: #fafafa;
+    --t-color: #f4f4f4;
+    /* fuentes */
+    --p-font: Raleway;
+    --s-font: Montserrat;
+    --h-font: 'Bebas Neue';
 }
 
 * {
@@ -17,11 +17,10 @@
     box-sizing: border-box;
 }
 
-body {
-    max-width: 100vw;
-}
 
 /*barra de navegacion*/
+
+/* Aqui se modifican los colores para sean diferentes que en el index */
 .header {
     position: fixed;
     top: 0;
@@ -46,9 +45,9 @@ body {
                     position: relative;
                     margin-left: 1.5rem;
                     text-decoration: none;
-                    color: var(--primary_color);
+                    color: black;
                     font-size: 12px;
-                    font-family: var(--sec_font);
+                    font-family: var(--s-font);
                     letter-spacing: 2px;
                     font-weight: 600;
                     text-decoration: none;
@@ -65,7 +64,7 @@ body {
                     left: 0;
                     width: 0;
                     height: 1px;
-                    background-color: var(--line_color, var(--primary_color));
+                    background-color: var(--line_color, black);
                     transition: width 0.4s ease;
                 }
 
@@ -81,9 +80,9 @@ body {
                 transform: translateX(-50%);
 
                 .logo {
-                    color: var(--primary_color);
+                    color: black;
                     font-size: 22px;
-                    font-family: var(--primary_font);
+                    font-family: var(--p-font);
                     letter-spacing: 5px;
                     font-weight: 700;
                     text-decoration: none;
@@ -101,20 +100,131 @@ body {
 
                 .material-symbols-outlined {
                     margin-left: 2rem;
-                    font-size: 20px;
-                    color: white;
+                    cursor: pointer;
+                    font-size: 25px;
+                    color: black;
                     animation: enhance_items linear both;
                     animation-timeline: scroll(root block);
                     animation-range: 0 150px;
                 }
-            }
 
+                .shopping-icon-container {
+                    position: relative;
+
+                    .material-symbols-outlined {
+                        margin-left: 2rem;
+                        font-size: 25px;
+                        color: black;
+                        animation: enhance_items linear both;
+                        animation-timeline: scroll(root block);
+                        animation-range: 0 150px;
+                    }
+
+                    /* carrito de compras*/
+
+                    #contador{
+                        font-size: 12px;
+                        cursor: pointer;
+                    }
+
+                    .count-products {
+                        position: absolute;
+                        top: 50%;
+                        left: 75%;
+
+                        background-color: #000;
+                        color: #fff;
+                        width: 15px;
+                        height: 15px;
+
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 50%;
+
+                    }
+                    .hidden-cart{
+                        display: none;
+                    }
+                    .container-cart-products {
+                        position: absolute;
+                        top: 42px;
+                        right: 0;
+                        cursor: default;
+
+                        background-color: #fff;
+                        width: 400px;
+                        z-index: 1;
+
+                        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+                        .cart-products {
+                            display: flex;
+                            justify-content: space-between;
+                            padding: 30px;
+                            align-items: center;
+
+                            border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+
+                            .info-cart-products {
+                                display: flex;
+                                justify-content: space-between;
+                                flex: 0.8;
+
+                                .titulo-producto {
+                                    font-size: 20px;
+                                }
+
+                                .precio-carrito {
+                                    font-weight: 700;
+                                    font-size: 20px;
+                                    margin-left: 10px;
+                                }
+
+                                .cantidad-productos {
+                                    font-weight: 400;
+                                    font-size: 20px;
+                                }
+                            }
+
+                            .close-icon {
+                                .material-symbols-outlined {
+                                    color: black;
+                                    font-size: 25px;
+                                    cursor: pointer;
+                                }
+                            }
+
+
+                        }
+
+                        .cart-total {
+                            display: flex;
+                            justify-content: center;
+                            padding: 20px 0;
+                            gap: 20px;
+                            align-items: center;
+
+                            h3 {
+                                font-size: 20px;
+                                font-weight: 700;
+                            }
+
+                            .total-pagar {
+                                font-size: 20px;
+                                font-weight: 900;
+                            }
+                        }
+                    }
+                    
+                }
+            }
         }
     }
 }
+
 @keyframes enhance_header {
     to {
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: rgb(0, 0, 0, 0.7);
         backdrop-filter: blur(15px);
     }
 }
@@ -125,7 +235,10 @@ body {
     }
 }
 
+
+
 .products_details_container {
+    position: relative;
     display: flex;
     justify-content: space-between;
     margin-top: 2rem;
@@ -144,7 +257,11 @@ body {
     }
 
     .products_texts_container {
+        position: absolute;
+        top: 10%;
+        left: 50%;  
         width: 50%;
+        height: 100%;
         display: flex;
         flex-direction: column;
         padding: 0 2rem;
@@ -155,14 +272,14 @@ body {
             flex-direction: column;
             row-gap: 1rem;
 
-            h1{
-                font-family: var(--primary_font);
+            h1 {
+                font-family: var(--p-font);
                 font-size: 20px;
                 letter-spacing: 3px;
             }
 
-            span{
-                font-family: var(--sec_font);
+            span {
+                font-family: var(--s-font);
                 font-size: 15px;
             }
         }
@@ -173,7 +290,7 @@ body {
                 padding: 1rem;
                 background-color: #000000;
                 color: #FFFFFF;
-                font-family: var(--primary_font);
+                font-family: var(--p-font);
                 font-size: 15px;
                 font-weight: 600;
                 letter-spacing: 2px;
@@ -183,7 +300,7 @@ body {
                 cursor: pointer;
             }
 
-            .ad_to_bag_buttom:hover{
+            .ad_to_bag_buttom:hover {
                 background-color: #FFFFFF;
                 color: black;
             }
@@ -198,13 +315,14 @@ body {
                 margin-bottom: 1.5rem;
 
                 h3 {
-                    font-family: var(--primary_font);
+                    font-family: var(--p-font);
                     text-transform: uppercase;
                     letter-spacing: 3px;
                     margin-bottom: 5px;
                 }
-                p{ 
-                    font-family: var(--sec_font);
+
+                p {
+                    font-family: var(--s-font);
                     font-size: 15px;
                     margin-top: .5rem;
                 }

@@ -1,0 +1,639 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* colores y variables reutilizables */
+:root {
+    /* colores */
+    --p-color: #555555;
+    --s-color: #fafafa;
+    --t-color: #f4f4f4;
+    /* fuentes */
+    --p-font: Raleway;
+    --s-font: Montserrat;
+    --h-font: 'Bebas Neue';
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/*barra de navegacion*/
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: .3rem 1rem;
+    background-color: transparent;
+    z-index: 100;
+    animation: enhance_header linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0 150px;
+
+    .navbar {
+        .nav_items_container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: .5rem;
+            padding-bottom: .5rem;
+
+            .a_container {
+                a {
+                    position: relative;
+                    margin-left: 1.5rem;
+                    text-decoration: none;
+                    color: white;
+                    font-size: 12px;
+                    font-family: var(--s-font);
+                    letter-spacing: 2px;
+                    font-weight: 600;
+                    text-decoration: none;
+                    text-transform: capitalize;
+                    animation: enhance_items linear both;
+                    animation-timeline: scroll(root block);
+                    animation-range: 0 150px;
+                }
+
+                a::before {
+                    content: "";
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 0;
+                    height: 1px;
+                    background-color: var(--line_color, white);
+                    transition: width 0.4s ease;
+                }
+
+                a:hover::before {
+                    width: 100%;
+                }
+            }
+
+
+            .navbar_logo_container {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+
+                .logo {
+                    color: white;
+                    font-size: 22px;
+                    font-family: var(--p-font);
+                    letter-spacing: 5px;
+                    font-weight: 700;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    transition: 0.4s;
+                    animation: enhance_items linear both;
+                    animation-timeline: scroll(root block);
+                    animation-range: 0 150px;
+                }
+            }
+
+            .icons_container {
+                display: flex;
+                margin-right: 10px;
+
+                .material-symbols-outlined {
+                    margin-left: 2rem;
+                    cursor: pointer;
+                    font-size: 25px;
+                    color: white;
+                    animation: enhance_items linear both;
+                    animation-timeline: scroll(root block);
+                    animation-range: 0 150px;
+                }
+
+                .shopping-icon-container {
+                    position: relative;
+
+                    .material-symbols-outlined {
+                        margin-left: 2rem;
+                        font-size: 25px;
+                        color: white;
+                        animation: enhance_items linear both;
+                        animation-timeline: scroll(root block);
+                        animation-range: 0 150px;
+                    }
+
+                    /* carrito de compras*/
+
+                    #contador {
+                        font-size: 12px;
+                        cursor: pointer;
+                    }
+
+                    .count-products {
+                        position: absolute;
+                        top: 50%;
+                        left: 75%;
+
+                        background-color: #000;
+                        color: #fff;
+                        width: 15px;
+                        height: 15px;
+
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 50%;
+
+                    }
+
+                    .hidden-cart {
+                        display: none;
+                    }
+
+                    .container-cart-products {
+
+                        position: absolute;
+                        top: 50px;
+                        right: 0;
+
+                        background-color: #fff;
+                        width: 400px;
+                        z-index: 1;
+                        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+                        border-radius: 10px;
+
+
+
+                        .cart-products {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            padding: 30px;
+
+                            border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+
+                            .info-cart-products {
+                                display: flex;
+                                justify-content: space-between;
+                                flex: 0.8;
+                                align-items: center;
+
+
+                                .cantidad-productos {
+                                    font-weight: 400;
+                                    font-size: 17px;
+                                    font-family: Montserrat;
+
+                                }
+
+                                .titulo-producto {
+                                    font-size: 17px;
+                                    font-family: Raleway;
+                                }
+
+                                .precio-carrito {
+                                    font-weight: 600;
+                                    font-size: 15px;
+                                    margin-left: 10px;
+                                    font-family: Montserrat;
+
+                                }
+                            }
+
+                            .close-icon-container {
+                                .material-symbols-outlined {
+                                    color: red;
+                                    font-size: 23px;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+
+                        /* .hidden{
+                            display: none;
+                        } */
+
+
+                        .cart-total {
+                            display: flex;
+                            justify-content: center;
+                            padding: 20px 0;
+                            gap: 20px;
+                            align-items: center;
+
+                            h3 {
+                                font-size: 20px;
+                                font-weight: 500;
+                                font-family: Raleway;
+
+                            }
+
+                            .total-pagar {
+                                font-size: 20px;
+                                font-weight: 700;
+                                font-family: Montserrat;
+
+                            }
+                        }
+
+                        .cart-empty {
+                            padding: 20px;
+                            text-align: center;
+
+                            font-family: var(--p-font);
+                            font-size: 15px;
+                        }
+
+
+                        /* .hidden{
+                            display: none;
+                        } */
+
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+@keyframes enhance_header {
+    to {
+        background-color: rgb(255, 255, 255, 0.7);
+        backdrop-filter: blur(15px);
+    }
+}
+
+@keyframes enhance_items {
+    to {
+        color: black;
+    }
+}
+
+
+/* seccion hero */
+.hero-section {
+    position: relative;
+
+    /* contenedor del video de la seccion hero */
+    .hero-video-container {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.8);
+
+        /* video de la seccion hero */
+        .hero-seccion-video {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+    }
+
+    /* texto de la seccion hero sobre el video */
+    .hero-title-left {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-left: 2rem;
+
+        h2 {
+            font-size: 60px;
+            font-family: var(--h-font);
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            font-weight: 600;
+            color: white;
+            padding-bottom: .5rem;
+        }
+
+        p {
+            font-size: 15px;
+            font-weight: normal;
+            letter-spacing: 3px;
+            font-family: var(--s-font);
+            color: white;
+        }
+    }
+}
+
+/* seccion de beneficios */
+
+.benefits-section {
+    width: 100%;
+    padding: 3.5rem 3.5rem;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    background-color: var(--s-color);
+
+    .benefits-card {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        img {
+            width: 150px;
+
+        }
+
+        h3 {
+            font-family: var(--s-font);
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding-bottom: 1rem;
+        }
+
+        p {
+            text-align: center;
+            font-family: var(--p-font);
+            font-weight: normal;
+            font-size: 15px;
+            letter-spacing: 5px;
+        }
+    }
+}
+
+/* seccion de joyas  */
+
+.jewels-section {
+    width: 100%;
+
+    /* ul de la seccion de joyas */
+    .jewels-section-container {
+        list-style: none;
+        width: 100%;
+        height: auto;
+        display: flex;
+
+        /* cartas con las joyas */
+        .jewels-card {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            outline: 1px solid black;
+            z-index: 3;
+
+            /* imagen principal */
+            .p-img {
+                flex: 1;
+                max-width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: opacity 0.4s ease;
+            }
+
+            /* imagen hover */
+            .img-hover {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                opacity: 0;
+                transition: opacity 0.4s ease;
+                z-index: -1;
+            }
+
+            /* contenedor del texto */
+            .jewels-card-text-container {
+                width: 100%;
+                background-color: transparent;
+                position: absolute;
+                bottom: 0;
+                padding: 1rem 2rem;
+                transition: background-color 0.4s ease;
+
+                /* texto */
+                .jewels-card-text {
+                    position: relative;
+                    text-decoration: none;
+                    font-size: 15px;
+                    font-family: var(--p-font);
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    color: black;
+                    padding-bottom: 2px;
+
+                }
+
+                .jewels-card-text::after {
+                    content: "";
+                    border-radius: 5rem;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 0;
+                    height: 1px;
+                    background: black;
+                    transition: width 0.5s ease, background-color 0.5s ease;
+                    transition-delay: 90ms;
+                }
+            }
+
+            /* efecto de linea debajo del texto */
+            ::before {
+                content: "";
+                border-radius: 5rem;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 1.5px;
+                background: black;
+                transition: width 0.5s ease, background-color 0.5s ease;
+                transition-delay: 90ms;
+            }
+
+            /* efectos hover de imagaenes y cambios de color de la carta */
+            &:hover {
+                .jewels-card-text:before {
+                    width: 100%;
+                    background: #C0C0C0;
+                }
+
+                .jewels-card-text-container {
+                    background-color: black;
+                }
+
+                .img-hover {
+                    opacity: 1;
+                }
+
+                .p-img {
+                    opacity: 0;
+                }
+
+                .jewels-card-text {
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+/* seccion de imagenes */
+
+.img-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+
+    /* carta con la imagen y el texto de estas */
+
+    .img-section-card {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        object-position: center;
+        max-width: 50%;
+        outline: 1px solid black;
+
+
+        /* imagen */
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+
+        /* texto de la carta de la izquierda */
+        .card-text1 {
+            position: absolute;
+            width: 100%;
+            top: 80%;
+            left: 50%;
+            color: white;
+            font-family: var(--h-font);
+            font-weight: 900;
+            font-size: 45px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-align: center;
+            transform: translate(-50%, -50%);
+        }
+
+        /* texto de la carta de la derecha */
+        .card-text2 {
+            position: absolute;
+            text-align: center;
+            top: 70%;
+
+            h2 {
+                font-family: var(--h-font);
+                font-size: 50px;
+                font-weight: 600;
+                padding-bottom: 10px;
+                letter-spacing: 3px;
+                color: white;
+            }
+
+            p {
+                font-family: var(--s-font);
+                font-size: 20px;
+                font-weight: bold;
+                letter-spacing: 3px;
+                color: white;
+            }
+        }
+    }
+}
+
+/* footer */
+
+.footer {
+    /* contnedor principal del footer */
+    border-top: 1px solid black;
+    padding-top: 3rem;
+    background-color: var(--s-color);
+
+    .footer_end_container {
+        padding: 1rem;
+        width: 100%;
+        background-color: black;
+
+        .footer_end_list {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            color: white;
+            font-family: var(--p-font);
+            font-size: 9px;
+            letter-spacing: 1.5px;
+
+            li {
+                margin-right: 3rem;
+
+                a {
+                    text-decoration: none;
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .footer_container {
+        display: flex;
+        width: 1140px;
+        margin: auto;
+        display: flex;
+        padding: 20px 50px;
+        justify-content: space-between;
+
+        .footer_logo_container {
+            position: relative;
+            top: 40px;
+
+
+            /* logo del footer */
+            .footer_logo {
+                color: black;
+                font-size: 24px;
+                font-family: var(--p-font);
+                letter-spacing: 5px;
+                font-weight: 500;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+        }
+
+        .footer_list_container {
+            .footer_links_container {
+                list-style: none;
+
+                h4 {
+                    font-family: var(--p-font);
+                    font-size: 12px;
+                    padding-bottom: 1rem;
+                    color: black;
+                    letter-spacing: 1.5px;
+                }
+
+                li {
+                    font-family: var(--s-font);
+                    font-size: 10px;
+                    font-weight: 600;
+                    margin-bottom: 1.5rem;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: black;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,396 @@
+{
+    "categories": [
+        {
+            "category": "Anillos",
+            "pageTitle": "Colección de Anillos",
+            "pageDescription": "Descubre nuestra exclusiva colección de anillos de lujo",
+            "products": [
+                {
+                    "id": 1,
+                    "name": "Diamonds Band",
+                    "category": "Anillos",
+                    "price": "$500",
+                    "detail": "Una banda elegante adornada con diamantes para una apariencia sofisticada.",
+                    "description": "Perfecta para ocasiones especiales o como un regalo significativo.",
+                    "material": "14k Yellow Gold",
+                    "img": "/assets/img/rings/0-DiamondsBand-14k-Front_196.jpg",
+                    "hoverImg": "/assets/img/rings/rings_hover_img/1-DiamondsBand-14K-Stack1_023.jpg"
+                },
+                {
+                    "id": 2,
+                    "name": "Duo Ring",
+                    "category": "Anillos",
+                    "price": "$350",
+                    "detail": "Un anillo único con un diseño moderno de dos piezas.",
+                    "description": "Ideal para complementar un estilo contemporáneo y elegante.",
+                    "material": "14k Yellow Gold",
+                    "img": "/assets/img/rings/0-DuoRing-14K-Angled_414.jpg",
+                    "hoverImg": "/assets/img/rings/rings_hover_img/1-DuoRing-14K-Stack1_007.jpg"
+                },
+                {
+                    "id": 3,
+                    "name": "Dôme Figure Ring",
+                    "category": "Anillos",
+                    "price": "$80",
+                    "detail": "Un anillo con detalles de esmalte en un acabado plateado.",
+                    "description": "Perfecto para un look llamativo con un toque de color.",
+                    "material": "Sterling Silver, Apricot Enamel",
+                    "img": "/assets/img/rings/0-FIGUREIIRINGS-FigureRingEnamelApricot-SS-Angled__992.jpg",
+                    "hoverImg": "/assets/img/rings/rings_hover_img/1-FIGUREIIRINGS-FigureRingEnamelApricot-SS-Stack__056.jpg"
+                },
+                {
+                    "id": 4,
+                    "name": "Duet Mixed Ring",
+                    "category": "Anillos",
+                    "price": "$200",
+                    "detail": "Un diseño mixto que combina texturas y metales.",
+                    "description": "Añade versatilidad a tu colección con este anillo único.",
+                    "material": "Gold Vermeil, Sterling Silver",
+                    "img": "/assets/img/rings/0-MIXEDMETALS_MixMetalRing_SS_ANGLED_020.jpg",
+                    "hoverImg": "/assets/img/rings/rings_hover_img/1-MIXEDMETALS_MixMetalRing_SS_Stack_027.jpg"
+                },
+                {
+                    "id": 5,
+                    "name": "Mixed Tube Ring",
+                    "category": "Anillos",
+                    "price": "$100",
+                    "detail": "Un anillo tubular que mezcla elegancia y modernidad.",
+                    "description": "Perfecto para complementar estilos casuales o formales.",
+                    "material": "Sterling Silver, Gold Vermeil",
+                    "img": "/assets/img/rings/0-MixedMetalTubeCollection_MixedMetalTubeStatementRingSilver_SS_Angled_023.jpg",
+                    "hoverImg": "/assets/img/rings/rings_hover_img/1-MixedMetalTube_MixedMetalRing_SS_Stack_001.jpg"
+                },
+                {
+                    "id": 6,
+                    "name": "Slim Signet Ring",
+                    "category": "Anillos",
+                    "price": "$250",
+                    "detail": "Un anillo delgado con un diseño clásico y refinado.",
+                    "description": "Ideal para quienes buscan un accesorio discreto y elegante.",
+                    "material": "14k Yellow Gold",
+                    "img": "/assets/img/rings/0-SlimSignetRing-14k-Angled_076.jpg",
+                    "hoverImg": "/assets/img/rings/rings_hover_img/Nicole_-_04.09.19-158.jpg"
+                },
+                {
+                    "id": 7,
+                    "name": "Stacker Ring",
+                    "category": "Anillos",
+                    "price": "$100",
+                    "detail": "Un anillo apilable diseñado para combinar con otros accesorios.",
+                    "description": "Perfecto para crear looks personalizados y únicos.",
+                    "material": "14k Yellow Gold",
+                    "img": "/assets/img/rings/0-StackerRing-14K-Angled_352.jpg",
+                    "hoverImg": "/assets/img/rings/rings_hover_img/1-StackerRing-YG-OnFigure-Stack-022.jpg"
+                },
+                {
+                    "id": 8,
+                    "name": "Daily Stacker Ring",
+                    "category": "Anillos",
+                    "price": "$50",
+                    "detail": "Un anillo apilable ligero y versátil para uso diario.",
+                    "description": "Un accesorio esencial para cualquier guardarropa moderno.",
+                    "material": "Gold Vermeil",
+                    "img": "/assets/img/rings/1_DailyStackerRing_V_Hero_Front.jpg",
+                    "hoverImg": "/assets/img/rings/rings_hover_img/2_DailyStackerRing_V_Solo_Fair.jpg"
+                },
+                {
+                    "id": 9,
+                    "name": "Diamonds Band",
+                    "category": "Anillos",
+                    "price": "$500",
+                    "detail": "Una banda elegante adornada con diamantes para una apariencia sofisticada.",
+                    "description": "Perfecta para ocasiones especiales o como un regalo significativo.",
+                    "material": "14k Yellow Gold",
+                    "img": "/assets/img/rings/0-DiamondsBand-14k-Front_196.jpg",
+                    "hoverImg": "/assets/img/rings/rings_hover_img/1-DiamondsBand-14K-Stack1_023.jpg"
+                }
+            ]
+        },
+        {
+            "category": "Brazaletes",
+            "pageTitle": "Colección de Brazaletes",
+            "pageDescription": "Realza tu colección de joyas con brazaletes de oro y plata.",
+            "products": [
+                {
+                    "id": 9,
+                    "name": "Letter Bracelet",
+                    "category": "Brazaletes",
+                    "price": "$170",
+                    "detail": "Un brazalete elegante con detalles personalizados.",
+                    "description": "Perfecto para ocasiones especiales y para realzar cualquier atuendo.",
+                    "material": "14k Yellow Gold",
+                    "img": "/assets/img/bracelets/0-14KLETTERS-14kLetterBraceletA-14K-TopDown_024.webp",
+                    "hoverImg": "/assets/img/bracelets/bracelets_hover_img/1-DiamondHalfTennisBracelet-14K-Stack_029.webp"
+                },
+                {
+                    "id": 10,
+                    "name": "Diamond Tennis Bracelet 1.8mm",
+                    "category": "Brazaletes",
+                    "price": "$4000",
+                    "detail": "Un lujoso brazalete de tenis con diamantes brillantes.",
+                    "description": "El accesorio ideal para destacar en eventos formales o cenas elegantes.",
+                    "material": "14k White Gold",
+                    "img": "/assets/img/bracelets/0-BoldDiamondTennisBracelet-WG-Front_183.webp",
+                    "hoverImg": "/assets/img/bracelets/bracelets_hover_img/1-BoldDiamondTennisBraceletWhiteGold-14K-Stack1_028.webp"
+                },
+                {
+                    "id": 11,
+                    "name": "Boyfriend Pavé Diamond Bar Bracelet",
+                    "category": "Brazaletes",
+                    "price": "$600",
+                    "detail": "Brazalete audaz con pavé de diamantes en diseño moderno.",
+                    "description": "Un accesorio llamativo que equilibra lo clásico con lo contemporáneo.",
+                    "material": "14k Yellow Gold",
+                    "img": "/assets/img/bracelets/0-BoyfriendBoldPaveBarBracelet-14K-TopDown_437.webp",
+                    "hoverImg": "/assets/img/bracelets/bracelets_hover_img/1-BoyfriendBoldPaveBarBracelet-14k-Stack_025.webp"
+                },
+                {
+                    "id": 12,
+                    "name": "Diamond Half Tennis Bracelet",
+                    "category": "Brazaletes",
+                    "price": "$980",
+                    "detail": "Un brazalete de media línea de diamantes para un toque sofisticado.",
+                    "description": "Perfecto para complementar atuendos de noche o looks de oficina.",
+                    "material": "14k Yellow Gold",
+                    "img": "/assets/img/bracelets/0-DiamondHalfTennisBracelet-14K-Front_233.webp",
+                    "hoverImg": "/assets/img/bracelets/bracelets_hover_img/1-DiamondHalfTennisBracelet-14K-Stack_029.webp"
+                },
+                {
+                    "id": 13,
+                    "name": "Spheres Chain Bracelet",
+                    "category": "Brazaletes",
+                    "price": "$138",
+                    "detail": "Un brazalete único con esferas intercaladas para un diseño moderno.",
+                    "description": "Ideal para looks casuales o como complemento a otros accesorios.",
+                    "material": "14k Yellow Gold",
+                    "img": "/assets/img/bracelets/0-SpheresBracelet-14K-TopDown_169.webp",
+                    "hoverImg": "/assets/img/bracelets/bracelets_hover_img/1-SpheresBracelet-YG-OnFigure-Stack-030.webp"
+                },
+                {
+                    "id": 14,
+                    "name": "Heart Station Bracelet",
+                    "category": "Brazaletes",
+                    "price": "$100",
+                    "detail": "Un delicado brazalete con detalles en forma de corazón.",
+                    "description": "Perfecto para añadir un toque romántico a cualquier atuendo.",
+                    "material": "Gold Vermeil",
+                    "img": "/assets/img/bracelets/0-VERMEILBRACELETS_MultiStationBraceletHeartVermeil_V_TopDown_033.webp",
+                    "hoverImg": "/assets/img/bracelets/bracelets_hover_img/1-VERMEILBRACELETS_MultiStationBraceletHeartVermeil_V_Stack_019.webp"
+                },
+                {
+                    "id": 15,
+                    "name": "Anchor Chain Bracelet",
+                    "category": "Brazaletes",
+                    "price": "$178",
+                    "detail": "Un brazalete de cadena con diseño inspirado en anclas.",
+                    "description": "Un accesorio único que combina elegancia con un toque náutico.",
+                    "material": "14k Yellow Gold",
+                    "img": "/assets/img/bracelets/0_AnchorChain_bracelet_yg_topdown_hero.webp",
+                    "hoverImg": "/assets/img/bracelets/bracelets_hover_img/1_AnchorChain_bracelet_yg_solo.webp"
+                },
+                {
+                    "id": 16,
+                    "name": "Mini Pearl Satellite Bracelet",
+                    "category": "Brazaletes",
+                    "price": "$100",
+                    "detail": "Un brazalete delicado con detalles de perlas.",
+                    "description": "Perfecto para un look minimalista o para complementar un atuendo formal.",
+                    "material": "Gold Vermeil",
+                    "img": "/assets/img/bracelets/0_MiniPearlSatelliteBracelet_V_Hero.webp",
+                    "hoverImg": "/assets/img/bracelets/bracelets_hover_img/1_MiniPearlSatelliteBracelet_V_Stack_0830.webp"
+                }
+            ]
+        },
+        {
+            "category": "Collares",
+            "pageTitle": "Colección de Collares",
+            "pageDescription": "Descubre nuestra exclusiva colección de collares de lujo",
+            "products": [
+                {
+                    "id": 17,
+                    "name": "Curb Chain Necklace",
+                    "category": "Collares",
+                    "price": "$370",
+                    "detail": "Un collar de cadena clásica con un diseño sofisticado.",
+                    "description": "Perfecto para combinar con estilos modernos y elegantes.",
+                    "material": "14k Yellow Gold",
+                    "img": "/assets/img/necklaces/0-CurbChainNecklace-14K-Front_009.jpg",
+                    "hoverImg": "/assets/img/necklaces/necklaces_hover_img/hover_1-CurbChainNecklace-YG-OnFigure-Stack-030.jpg"
+                },
+                {
+                    "id": 18,
+                    "name": "Pearl Charm Necklace",
+                    "category": "Collares",
+                    "price": "$528",
+                    "detail": "Un collar adornado con perlas y un encanto único.",
+                    "description": "Un accesorio atemporal que aporta elegancia a cualquier atuendo.",
+                    "material": "Gold Vermeil",
+                    "img": "/assets/img/necklaces/0-HIGHSUMMERSHELLSBEADS-PearlNecklacewithVermeilEnhancer-V-Front_018.jpg",
+                    "hoverImg": "/assets/img/necklaces/necklaces_hover_img/hover_1-HIGHSUMMERSHELLSBEADS-PearlNecklacewithVermeilEnhancer-V-Stack_013.jpg"
+                },
+                {
+                    "id": 19,
+                    "name": "Linked Gemstone Necklace",
+                    "category": "Collares",
+                    "price": "$90",
+                    "detail": "Un collar decorado con piedras preciosas y un diseño moderno.",
+                    "description": "Ideal para ocasiones casuales o formales, aportando un toque de lujo.",
+                    "material": "14k Yellow Gold",
+                    "img": "/assets/img/necklaces/0-LinkedGemstoneNecklace_GreenAventurine_14K_FRONT_055.jpg",
+                    "hoverImg": "/assets/img/necklaces/necklaces_hover_img/hover_1-LinkedGemstoneNecklace_GreenAventurine_14K_Stack_043.jpg"
+                },
+                {
+                    "id": 20,
+                    "name": "Spheres Chain Necklace",
+                    "category": "Collares",
+                    "price": "$248",
+                    "detail": "Un diseño único con esferas que aportan textura al collar.",
+                    "description": "Combina fácilmente con estilos tanto casuales como formales.",
+                    "material": "14k Yellow Gold",
+                    "img": "/assets/img/necklaces/0-NEWCHAINS_SpheresChokerNecklace_14k_Front_061.jpg",
+                    "hoverImg": "/assets/img/necklaces/necklaces_hover_img/hover_1-NEWCHAINS_SpheresNecklace_14K_Stack_012.jpg"
+                },
+                {
+                    "id": 21,
+                    "name": "Layered Pearl Necklace",
+                    "category": "Collares",
+                    "price": "$138",
+                    "detail": "Un collar de perlas en capas para un look sofisticado.",
+                    "description": "Ideal para destacar en eventos especiales o reuniones formales.",
+                    "material": "Sterling Silver",
+                    "img": "/assets/img/necklaces/0-RELAUNCH-LayeredPearlNecklaceSilver-SS-Front_946.jpg",
+                    "hoverImg": "/assets/img/necklaces/necklaces_hover_img/hover_1_LayeredOpalNecklace_SS_Solo_Medium_c5b7e4e9-ea49-47aa-a727-0b19b2c018a9.jpg"
+                },
+                {
+                    "id": 22,
+                    "name": "Vermeil Linked Necklace",
+                    "category": "Collares",
+                    "price": "$148",
+                    "detail": "Un collar con eslabones de vermeil para un diseño clásico.",
+                    "description": "Perfecto para complementar atuendos elegantes y contemporáneos.",
+                    "material": "Gold Vermeil",
+                    "img": "/assets/img/necklaces/0_VermeilLinkedNecklace_V_Hero.jpg",
+                    "hoverImg": "/assets/img/necklaces/necklaces_hover_img/hover_1_VermeilLinkedNecklace_V_Solo_Medium_e18db23b-f5cc-4339-a8e3-77c9662d6afb.jpg"
+                },
+                {
+                    "id": 23,
+                    "name": "Round Topaz Necklace",
+                    "category": "Collares",
+                    "price": "$98",
+                    "detail": "Un collar delicado con un colgante de topacio redondo.",
+                    "description": "Aporta un toque sutil de elegancia a tu look diario.",
+                    "material": "Gold Vermeil",
+                    "img": "/assets/img/necklaces/0_White_Topaz_Round_Necklace_Front.jpg",
+                    "hoverImg": "/assets/img/necklaces/necklaces_hover_img/hover_1_Mejuri_MarchDropsv_White_Topaz_Round_Necklace_Solo_4712_c655d9b7-01e9-44e6-9648-d8741c8507e6.jpg"
+                },
+                {
+                    "id": 24,
+                    "name": "Satellite Necklace",
+                    "category": "Collares",
+                    "price": "$100",
+                    "detail": "Un collar minimalista con detalles satelitales únicos.",
+                    "description": "Perfecto para looks casuales y estilos modernos.",
+                    "material": "Gold Vermeil",
+                    "img": "/assets/img/necklaces/SatelliteWhiteSapphire_Necklace_v_Hero-0136.jpg",
+                    "hoverImg": "/assets/img/necklaces/necklaces_hover_img/hover_Truth-05-01-19-satellitenecklace.jpg"
+                }
+            ]
+        },
+        {
+            "category": "Pendientes",
+            "pageTitle": "Colección de Pendientes",
+            "pageDescription": "Realza tu colección de joyas con pendientes de oro y plata.",
+            "products": [
+
+                {
+                    "id": 25,
+                    "name": "Charlotte Bold Hoops",
+                    "category": "Pendientes",
+                    "price": "$90",
+                    "detail": "Aros gruesos y elegantes que destacan por su diseño clásico.",
+                    "description": "Perfectos para añadir un toque moderno a tu look diario o de noche.",
+                    "material": "Gold Vermeil",
+                    "img": "/assets/img/earrings/0-CharlotteBoldHoops_earring_v_hero.jpg",
+                    "hoverImg": "/assets/img/earrings/earrings_hover_img/hover_Charlotte_VermeilEarrings_V_med_stack.jpg"
+                },
+                {
+                    "id": 26,
+                    "name": "Mini Heart Stud",
+                    "category": "Pendientes",
+                    "price": "$80",
+                    "detail": "Pequeños pendientes en forma de corazón con un diseño delicado.",
+                    "description": "Ideales para añadir un toque romántico y sutil a cualquier atuendo.",
+                    "material": "14k Yellow Gold",
+                    "img": "/assets/img/earrings/0-EARPARTY2.0-SolidGoldMiniHeartStud_single_-14K-Front_477.jpg",
+                    "hoverImg": "/assets/img/earrings/earrings_hover_img/hover_1-EARPARTY2.0-SolidGoldMiniHeartStud_single_-14K-Stack_014.jpg"
+                },
+                {
+                    "id": 27,
+                    "name": "Chunky Medium Hoops",
+                    "category": "Pendientes",
+                    "price": "$90",
+                    "detail": "Aros medianos con un diseño chunky para un estilo audaz.",
+                    "description": "Un accesorio versátil que combina con atuendos casuales y elegantes.",
+                    "material": "Gold Vermeil",
+                    "img": "/assets/img/earrings/0-NewHoopStandard_ChubbyHoopsMedium16mm_V_ANGLED_025.jpg",
+                    "hoverImg": "/assets/img/earrings/earrings_hover_img/hover_1-NewHoopStandard_ChubbyHoopsMedium16mm_V_Stack_032.jpg"
+                },
+                {
+                    "id": 28,
+                    "name": "Tube Oversized Hoops",
+                    "category": "Pendientes",
+                    "price": "$80",
+                    "detail": "Aros grandes y llamativos para un look moderno.",
+                    "description": "Perfectos para eventos especiales o para destacar con un atuendo sencillo.",
+                    "material": "Gold Vermeil",
+                    "img": "/assets/img/earrings/0-NewHoopStandard_TubeHoopsXLarge40mm_V_ANGLED_308.jpg",
+                    "hoverImg": "/assets/img/earrings/earrings_hover_img/hover_1-NewHoopStandard_TubeHoopsXLarge40mm_V_Solo_039.jpg"
+                },
+                {
+                    "id": 29,
+                    "name": "Mini Hoop",
+                    "category": "Pendientes",
+                    "price": "$40",
+                    "detail": "Aros pequeños y delicados con un diseño minimalista.",
+                    "description": "Ideales para el uso diario, aportando un toque discreto y moderno.",
+                    "material": "14k Yellow Gold",
+                    "img": "/assets/img/earrings/0-SingleMiniHoop-14K-Angled_045.jpg",
+                    "hoverImg": "/assets/img/earrings/earrings_hover_img/2-SingleMiniHoop-14k-Stack_025.jpg"
+                },
+                {
+                    "id": 30,
+                    "name": "Dôme Hoops",
+                    "category": "Pendientes",
+                    "price": "$80",
+                    "detail": "Aros con diseño abovedado que resaltan por su textura única.",
+                    "description": "Perfectos para añadir sofisticación a atuendos formales y casuales.",
+                    "material": "Gold Vermeil",
+                    "img": "/assets/img/earrings/0_DomeHoops_earring_v_hero_comp_d49f23d9-9781-4b56-9bf6-2e117fa985e8.jpg",
+                    "hoverImg": "/assets/img/earrings/earrings_hover_img/hover_1-DomeHoops-V-Stack1_016_ab9cdca6-0322-4848-b572-b2edfebfe214.jpg"
+                },
+                {
+                    "id": 31,
+                    "name": "Dôme Huggies",
+                    "category": "Pendientes",
+                    "price": "$60",
+                    "detail": "Pendientes pequeños con diseño abovedado y cierre cómodo.",
+                    "description": "Un accesorio elegante para complementar cualquier conjunto.",
+                    "material": "Gold Vermeil",
+                    "img": "/assets/img/earrings/0_DomeHuggies_earrings_yg_hero_Comp.jpg",
+                    "hoverImg": "/assets/img/earrings/earrings_hover_img/hover_1_DomeHuggies_v_fair_hero_e7c93fea-a424-4f14-8f9f-ff07ec5101f4.jpg"
+                },
+                {
+                    "id": 32,
+                    "name": "Round Topaz Hoops",
+                    "category": "Pendientes",
+                    "price": "$70",
+                    "detail": "Aros adornados con topacio redondo para un diseño sofisticado.",
+                    "description": "Aportan un toque de color y brillo a tus looks diarios o de noche.",
+                    "material": "Gold Vermeil",
+                    "img": "/assets/img/earrings/0_Round_Cut_Topaz_Hoops.jpg",
+                    "hoverImg": "/assets/img/earrings/earrings_hover_img/hover_1_Round_Cut_Topaz_Hoops.jpg"
+                }
+            ]
+        }
+    ]
+}

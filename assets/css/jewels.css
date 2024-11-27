@@ -1,0 +1,528 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* colores y variables reutilizables */
+:root {
+    /* colores */
+    --p-color: #555555;
+    --s-color: #fafafa;
+    --t-color: #f4f4f4;
+    /* fuentes */
+    --p-font: Raleway;
+    --s-font: Montserrat;
+    --h-font: 'Bebas Neue';
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/*barra de navegacion*/
+
+/* Aqui se modifican los colores para sean diferentes que en el index */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: .3rem 1rem;
+    background-color: transparent;
+    z-index: 100;
+    animation: enhance_header linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0 150px;
+
+    .navbar {
+        .nav_items_container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: .5rem;
+            padding-bottom: .5rem;
+
+            .a_container {
+                a {
+                    position: relative;
+                    margin-left: 1.5rem;
+                    text-decoration: none;
+                    color: black;
+                    font-size: 12px;
+                    font-family: var(--s-font);
+                    letter-spacing: 2px;
+                    font-weight: 600;
+                    text-decoration: none;
+                    text-transform: capitalize;
+                    animation: enhance_items linear both;
+                    animation-timeline: scroll(root block);
+                    animation-range: 0 150px;
+                }
+
+                a::before {
+                    content: "";
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 0;
+                    height: 1px;
+                    background-color: var(--line_color, black);
+                    transition: width 0.4s ease;
+                }
+
+                a:hover::before {
+                    width: 100%;
+                }
+            }
+
+
+            .navbar_logo_container {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+
+                .logo {
+                    color: black;
+                    font-size: 22px;
+                    font-family: var(--p-font);
+                    letter-spacing: 5px;
+                    font-weight: 700;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    transition: 0.4s;
+                    animation: enhance_items linear both;
+                    animation-timeline: scroll(root block);
+                    animation-range: 0 150px;
+                }
+            }
+
+            .icons_container {
+                display: flex;
+                margin-right: 10px;
+
+                .material-symbols-outlined {
+                    margin-left: 2rem;
+                    cursor: pointer;
+                    font-size: 25px;
+                    color: black;
+                    animation: enhance_items linear both;
+                    animation-timeline: scroll(root block);
+                    animation-range: 0 150px;
+                }
+
+                .shopping-icon-container {
+                    position: relative;
+
+                    .material-symbols-outlined {
+                        margin-left: 2rem;
+                        font-size: 25px;
+                        color: black;
+                        animation: enhance_items linear both;
+                        animation-timeline: scroll(root block);
+                        animation-range: 0 150px;
+                    }
+
+                    /* carrito de compras*/
+
+                    #contador {
+                        font-size: 12px;
+                        cursor: pointer;
+                    }
+
+                    .count-products {
+                        position: absolute;
+                        top: 50%;
+                        left: 75%;
+
+                        background-color: #000;
+                        color: #fff;
+                        width: 15px;
+                        height: 15px;
+
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 50%;
+
+                    }
+
+                    .hidden-cart {
+                        display: none;
+                    }
+
+                    .container-cart-products {
+
+                        position: absolute;
+                        top: 50px;
+                        right: 0;
+
+                        background-color: #fff;
+                        width: 400px;
+                        z-index: 1;
+                        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+                        border-radius: 10px;
+
+
+
+                        .cart-products {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            padding: 30px;
+
+                            border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+
+                            .info-cart-products {
+                                display: flex;
+                                justify-content: space-between;
+                                flex: 0.8;
+                                align-items: center;
+                                gap: 20px;
+                                text-align: center;
+
+                                .titulo-producto {
+                                    font-size: 17px;
+                                    font-family: Raleway;
+                                }
+
+                                .precio-carrito {
+                                    font-weight: 600;
+                                    font-size: 15px;
+                                    margin-left: 10px;
+                                    font-family: Montserrat;
+
+                                }
+
+                                .cantidad-productos {
+                                    font-weight: 400;
+                                    font-size: 17px;
+                                    font-family: Montserrat;
+
+                                }
+                            }
+
+                            .close-icon-container {
+
+                                .material-symbols-outlined {
+                                    margin-left: 2rem;
+                                    font-size: 25px;
+                                    color: black;
+                                    animation: none;
+                                    transition: 0.5s ease;
+                                }
+
+                                .material-symbols-outlined:hover{
+                                    color: rgb(175, 8, 8);
+                                }
+                            }
+
+
+                        }
+
+                        .hidden{
+                            display: none;
+                        }
+
+                        .cart-total {
+                            display: flex;
+                            justify-content: center;
+                            padding: 20px 0;
+                            gap: 20px;
+                            align-items: center;
+
+                            h3 {
+                                font-size: 20px;
+                                font-weight: 500;
+                                font-family: Raleway;
+
+                            }
+
+                            .total-pagar {
+                                font-size: 20px;
+                                font-weight: 700;
+                                font-family: Montserrat;
+
+                            }
+                        }
+
+
+                        .hidden{
+                            display: none;
+                        }
+
+                        .cart-empty {
+                            padding: 20px;
+                            text-align: center;
+
+                            font-family: var(--p-font);
+                            font-size: 15px;
+                        }
+
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+@keyframes enhance_header {
+    to {
+        background-color: rgb(0, 0, 0, 0.7);
+        backdrop-filter: blur(15px);
+    }
+}
+
+@keyframes enhance_items {
+    to {
+        color: white;
+    }
+}
+
+
+
+
+/* titulo de la pagina  */
+.title-container {
+    width: 100%;
+    height: auto;
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+    padding: 1rem 3rem;
+
+    h1 {
+        font-family: var(--h-font);
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        letter-spacing: .4rem;
+    }
+
+    p {
+        font-family: var(--p-font);
+        font-size: 20px;
+        font-weight: 500;
+    }
+}
+
+/* display de los productos */
+.prod-container {
+    width: 100%;
+    padding: 3rem 3rem;
+
+    /* display en grid de los productos */
+    .prod-list-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 0.5rem;
+        list-style: none;
+
+        /* carta de los productos */
+        .prod-card {
+            display: flex;
+            flex-direction: column;
+
+            a {
+                text-decoration: none;
+                color: black;
+                cursor: pointer;
+            }
+
+            /* contenedor de las imagenes */
+            .prod-img-content {
+                display: flex;
+                position: relative;
+                width: 100%;
+                height: 350px;
+                margin-bottom: 1rem;
+
+                /* imagen principal */
+                .p-img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                    transition: opacity 0.5s ease;
+                    z-index: 1;
+                }
+
+                /* imagen hover */
+                .hover-img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                    opacity: 0;
+                    transition: opacity 0.5s ease;
+                    z-index: -1;
+                }
+
+                /* efectos de hover de las imagenes */
+                &:hover {
+                    .hover-img {
+                        opacity: 1;
+                    }
+
+                    .p-img {
+                        opacity: 0;
+                    }
+                }
+            }
+
+            /* informacion del producto */
+            .prod-info {
+                display: flex;
+                flex-direction: column;
+
+                /* estilo del nombre del producto */
+                .prod-name {
+                    font-family: var(--p-font);
+                    font-size: 14px;
+                    font-weight: 600;
+                    line-height: 1.5;
+                    letter-spacing: .5px;
+                    transition: 0.5s;
+                    cursor: pointer;
+                }
+
+                .prod-name {
+                    font-family: Raleway;
+                    font-size: 14px;
+                    font-weight: 600;
+                    line-height: 1.5;
+                    letter-spacing: .5px;
+                    transition: 0.5s;
+                    cursor: pointer;
+
+                }
+
+                .prod-price {
+                    font-family: Raleway;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 1.5;
+                    letter-spacing: 1px;
+                }
+
+                .prod-material {
+                    font-family: Raleway;
+                    font-size: 12px;
+                    font-weight: 300;
+                    line-height: 1.5;
+                    letter-spacing: 1px;
+                    margin-top: 5px;
+                }
+
+                /* estilo del boton de compra */
+                .bag-btn {
+                    cursor: pointer;
+                    padding: 1rem;
+                    background-color: black;
+                    color: white;
+                    border: 1px solid black;
+                    font-family: Montserrat;
+                    transition: 0.4s ease;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    font-size: 10px;
+                    margin: 1.5rem 0;
+
+                    &:hover {
+                        background-color: white;
+                        color: black;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* footer */
+.footer {
+    /* contnedor principal del footer */
+    border-top: 1px solid black;
+    padding-top: 3rem;
+    background-color: var(--s-color);
+
+    .footer_end_container {
+        padding: 1rem;
+        width: 100%;
+        background-color: black;
+
+        .footer_end_list {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            color: white;
+            font-family: var(--p-font);
+            font-size: 9px;
+            letter-spacing: 1.5px;
+
+            li {
+                margin-right: 3rem;
+
+                a {
+                    text-decoration: none;
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .footer_container {
+        display: flex;
+        width: 1140px;
+        margin: auto;
+        display: flex;
+        padding: 20px 50px;
+        justify-content: space-between;
+
+        .footer_logo_container {
+            position: relative;
+            top: 40px;
+
+
+            /* logo del footer */
+            .footer_logo {
+                color: black;
+                font-size: 24px;
+                font-family: var(--p-font);
+                letter-spacing: 5px;
+                font-weight: 500;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+        }
+
+        .footer_list_container {
+            .footer_links_container {
+                list-style: none;
+
+                h4 {
+                    font-family: var(--p-font);
+                    font-size: 12px;
+                    padding-bottom: 1rem;
+                    color: black;
+                    letter-spacing: 1.5px;
+                }
+
+                li {
+                    font-family: var(--s-font);
+                    font-size: 10px;
+                    font-weight: 600;
+                    margin-bottom: 1.5rem;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: black;
+                }
+            }
+        }
+    }
+}
