@@ -133,14 +133,20 @@
                         height: 15px;
 
                         display: flex;
+
                         justify-content: center;
                         align-items: center;
+                        align-content: center;
+                        text-align: center;
+
                         border-radius: 50%;
 
 
                         #contador {
                             font-size: 12px;
                             cursor: pointer;
+                            font-family: Montserrat;
+
                         }
 
                     }
@@ -178,6 +184,7 @@
                                 display: flex;
                                 min-height: 180px;
                                 justify-content: flex-start;
+                                align-items: center;
                                 padding: 10px 1.5rem;
                                 border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 
@@ -187,8 +194,8 @@
                                     /* margin-right: 20px; */
                                     /* padding: 10px; */
 
-                                    /* width: 100px; */
-                                    /* height: 100px; */
+                                    width: 130px;
+                                    height: 130px;
 
                                     img {
                                         object-fit: cover;
@@ -201,7 +208,7 @@
                                 .info-container {
                                     width: 100%;
                                     display: flex;
-                                    justify-content:space-evenly;
+                                    justify-content: space-evenly;
                                     flex-direction: column;
                                     gap: 50px;
 
@@ -210,11 +217,12 @@
                                         display: flex;
                                         flex-direction: row;
                                         padding-left: 30px;
-                                        justify-content:space-between;
-                                        align-items: baseline;
+                                        justify-content: space-between;
+                                        align-items: flex-end;
 
                                         /* height: 100%; */
-                                        
+
+
 
                                         .titulo-producto {
                                             width: 150px;
@@ -224,6 +232,7 @@
                                             font-family: Montserrat;
                                             text-align: left;
                                         }
+
 
                                         .precio-carrito {
                                             font-weight: 500;
@@ -268,7 +277,7 @@
                                             text-decoration: underline;
                                             transition: 0.5s ease;
 
-                                            &:hover{
+                                            &:hover {
                                                 color: lightslategray;
                                                 text-shadow: 0 0 1px white;
                                             }
@@ -278,8 +287,6 @@
                                 }
 
                             }
-
-
                         }
 
                         .hidden {
@@ -298,9 +305,9 @@
                             gap: 20px;
                             align-items: center;
 
-                            border-top: 1px solid rgba(0,0,0,0.3);
+                            border-top: 1px solid rgba(0, 0, 0, 0.3);
 
-                            .cont{
+                            .cont {
                                 display: flex;
                                 justify-content: space-between;
                                 width: 100%;
@@ -310,21 +317,21 @@
                                     font-size: 14px;
                                     font-weight: 500;
                                     font-family: Raleway;
-    
+
                                 }
-    
+
                                 .total-pagar {
                                     font-size: 14px;
                                     font-weight: 700;
-                                    font-family: Montserrat;    
-                            }
-                            
+                                    font-family: Montserrat;
+                                }
+
                             }
 
-                            .cont-btn{
+                            .cont-btn {
                                 width: 100%;
 
-                                button{
+                                button {
                                     padding: 10px 30px;
                                     width: 100%;
                                     background-color: black;
@@ -337,20 +344,21 @@
                                     text-transform: uppercase;
                                     cursor: pointer;
 
-                                    transition: 0.3s ease;
+                                    transition: 0.2s ease;
 
-                                    &:hover{
+                                    &:hover {
                                         color: black;
                                         background-color: white;
                                     }
 
                                     &:active {
                                         background-color: rgb(235, 235, 235);
-                                        color: white;
+                                        color: black;
                                         text-shadow: 0 0 1px white;
                                         transition: none;
-                
+
                                     }
+
                                 }
                             }
                         }
@@ -371,9 +379,11 @@
                             font-size: 25px;
                             font-weight: bold;
 
-                            /* text-align: left; */
+                            text-align: left;
 
                             .cart-empty-btn {
+                                background-color: #fff;
+
                                 margin-top: 20px;
                                 padding: 10px;
                                 width: 100%;
@@ -391,15 +401,16 @@
                                 transition: 0.3s ease;
 
                                 &:hover {
-                                    background-color: rgb(224, 220, 220);
+                                    background-color: black;
+                                    color: white;
                                 }
 
                                 &:active {
-                                    background-color: rgb(235, 235, 235);
-                                    color: black;
+                                    background-color: rgb(197, 191, 191);
+                                    color: white;
                                     text-shadow: 0 0 1px white;
                                     transition: none;
-            
+
                                 }
                             }
                         }
