@@ -52,34 +52,51 @@
                         <div class="container-cart-products hidden-cart">
                             <div class="row-product hidden">
                                 <div class="cart-products">
+
+
                                     <!-- Aqui dentro se genenerara algo como esto -->
-                                    
-                                <!--<div class="info-cart-products">
-                                        <span class="cantidad-productos">1</span>
-                                        <p id="title" class="titulo-producto">
-                                            Letter Bracelet
-                                        </p>
-                                        <span class="precio-carrito">
-                                            $170
-                                        </span>
+                                    <!-- <div class="img-producto">
+                                        <img src="/assets/img/bracelets/0-14KLETTERS-14kLetterBraceletA-14K-TopDown_024.webp"
+                                            alt="">
                                     </div>
-                                    <div class="close-icon-container">
-                                        <span class="material-symbols-outlined">
-                                            close
-                                        </span>
+                                    <div class="info-container">
+                                        <div class="info-cart-products">
+                                            <p id="title" class="titulo-producto">
+                                                Letter Bracelet
+                                            </p>
+                                            <span class="precio-carrito">
+                                                $170
+                                            </span>
+                                        </div>
+                                        <div class="info-cart-products">
+                                            <div class="control">
+                                                <button id="minus" class="btn">-</button>
+                                                <span class="cantidad-productos">1</span>
+                                                <button id="plus" class="btn">+</button>
+                                            </div>
+                                            <span class="remove">
+                                                Remove
+                                            </span>
+                                        </div>
                                     </div> -->
-
-
 
                                 </div>
                             </div>
-                            <div class="cart-total  hidden">
-                                <h3>Total:</h3>
-                                <span class="total-pagar">$</span>
-                            </div>
+
                             <div class="cart-empty">
                                 <p>¡Oh!, su bolsa está vacía. Compre nuestros favoritos.</p>
-                                <a href="/assets/pages/all-products.html"><button class="cart-empty-btn"> Comprar </button></a>
+                                <a href="/assets/pages/all-products.html"><button class="cart-empty-btn"> Comprar
+                                    </button></a>
+                            </div>
+
+                            <div class="cart-total  hidden">
+                                <div class="cont">
+                                    <h3>Total Estimado</h3>
+                                    <span class="total-pagar">$</span>
+                                </div>
+                                <div class="cont-btn">
+                                    <button>Proceder al pago</button>
+                                </div>
                             </div>
                         </div>
 
@@ -91,12 +108,14 @@
             </div>
         </nav>
     </header>
+    <!--Titulo de la pagina-->
     <!--produts-->
     <main>
+        <!-- Página de detalles de producto con clases adaptadas -->
         <div class="products_details_container">
             <div class="products_img_container">
-                <img id="product_img" src="" alt="">
-                <img id="product_img2" src="" alt="">
+                <img id="product_img" src="" alt="Imagen del producto">
+                <img id="product_img2" src="" alt="Imagen de hover del producto">
             </div>
             <div class="products_texts_container">
                 <div class="product_name_container">
@@ -108,73 +127,68 @@
                 </div>
                 <div class="detail_container">
                     <div class="details">
-                        <h3></h3>
-                        <p id="details">
-
-                        </p>
+                        <h3>Detalles</h3>
+                        <p id="details"></p>
                     </div>
                     <div class="details">
-                        <h3></h3>
-                        <p id="description">
-
-                        </p>
+                        <h3>Descripción</h3>
+                        <p id="description"></p>
                     </div>
                     <div class="details">
-                        <h3></h3>
-                        <p id="materials">
-
-                        </p>
+                        <h3>Materiales</h3>
+                        <p id="materials"></p>
                     </div>
                 </div>
             </div>
         </div>
+
     </main>
     <script src="/assets/js/products-detail.js"></script>
-    <script src="/assets/js/side-logic.js"></script>
 </body>
 
-    <!--footer-->
-    <footer class="footer">
-        <div class="footer_container">
-            <div class="footer_list_container">
-                <ul class="footer_links_container">
-                    <li>
-                        <h4>Ayuda</h4>
-                    </li>
-                    <li><a href="#">Contacto</a></li>
-                    <li><a href="#">Preguntas frecuentes</a></li>
-                    <li><a href="#">Envios y devoluciones</a></li>
-                </ul>
-            </div>
-            <div class="footer_list_container">
-                <ul class="footer_links_container">
-                    <li>
-                        <h4>Joyas</h4>
-                    </li>
-                    <li><a href="#">Top ventas</a></li>
-                    <li><a href="#">Novedades</a></li>
-                    <li><a href="#">Joyas</a></li>
-                </ul>
-            </div>
-            <div class="footer_list_container">
-                <ul class="footer_links_container">
-                    <li>
-                        <h4>Valentinni</h4>
-                    </li>
-                    <li><a href="#">¿Nuestra mision?</a></li>
-                    <li><a href="#">Materiales</a></li>
-                </ul>
-            </div>
-            <div class="footer_logo_container">
-                <a class=" footer_logo" href="/html/index.html">Valentinni</a>
-            </div>
-        </div>
-        <div class="footer_end_container">
-            <ul class="footer_end_list">
-                <li><a href="">Politicas de privacidad</a></li>
-                <li><a href="">Terminos y condiciones</a></li>
-                <li>&copy 2024 Valentinni Inc</li>
+<!--footer-->
+<footer class="footer">
+    <div class="footer_container">
+        <div class="footer_list_container">
+            <ul class="footer_links_container">
+                <li>
+                    <h4>Ayuda</h4>
+                </li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Preguntas frecuentes</a></li>
+                <li><a href="#">Envios y devoluciones</a></li>
             </ul>
         </div>
-    </footer>
+        <div class="footer_list_container">
+            <ul class="footer_links_container">
+                <li>
+                    <h4>Joyas</h4>
+                </li>
+                <li><a href="#">Top ventas</a></li>
+                <li><a href="#">Novedades</a></li>
+                <li><a href="#">Joyas</a></li>
+            </ul>
+        </div>
+        <div class="footer_list_container">
+            <ul class="footer_links_container">
+                <li>
+                    <h4>Valentinni</h4>
+                </li>
+                <li><a href="#">¿Nuestra mision?</a></li>
+                <li><a href="#">Materiales</a></li>
+            </ul>
+        </div>
+        <div class="footer_logo_container">
+            <a class=" footer_logo" href="/html/index.html">Valentinni</a>
+        </div>
+    </div>
+    <div class="footer_end_container">
+        <ul class="footer_end_list">
+            <li><a href="">Politicas de privacidad</a></li>
+            <li><a href="">Terminos y condiciones</a></li>
+            <li>&copy 2024 Valentinni Inc</li>
+        </ul>
+    </div>
+</footer>
+
 </html>

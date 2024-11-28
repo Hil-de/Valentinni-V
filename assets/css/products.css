@@ -46,9 +46,9 @@
                     margin-left: 1.5rem;
                     text-decoration: none;
                     color: black;
-                    font-size: 12px;
+                    font-size: 11px;
                     font-family: var(--s-font);
-                    letter-spacing: 2px;
+                    letter-spacing: 1px;
                     font-weight: 600;
                     text-decoration: none;
                     text-transform: capitalize;
@@ -122,11 +122,6 @@
 
                     /* carrito de compras*/
 
-                    #contador{
-                        font-size: 12px;
-                        cursor: pointer;
-                    }
-
                     .count-products {
                         position: absolute;
                         top: 50%;
@@ -138,89 +133,337 @@
                         height: 15px;
 
                         display: flex;
+
                         justify-content: center;
                         align-items: center;
+                        align-content: center;
+                        text-align: center;
+
                         border-radius: 50%;
 
+
+                        #contador {
+                            font-size: 12px;
+                            cursor: pointer;
+                            font-family: Montserrat;
+
+                        }
+
                     }
-                    .hidden-cart{
-                        display: none;
-                    }
+
+
                     .container-cart-products {
-                        position: absolute;
-                        top: 42px;
-                        right: 0;
-                        cursor: default;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: end;
 
                         background-color: #fff;
-                        width: 400px;
+
+                        /* border: solid 1px rgba(0,0,0,0.2); */
+                        box-shadow: 0 0px 2px rgba(0, 0, 0, 0.7);
+                        position: absolute;
+                        top: 42px;
+                        right: -26px;
+
+
+                        width: 480px;
+                        height: 90vh;
                         z-index: 1;
 
-                        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
-                        .cart-products {
+                        .row-product {
+                            /* position: relative; */
+                            /* top: 5%; */
                             display: flex;
-                            justify-content: space-between;
-                            padding: 30px;
-                            align-items: center;
+                            flex-direction: column;
+                            gap: 50px;
+                            height: 90%;
+                            /* border-top: 1px solid rgba(0, 0, 0, 0.5); */
 
-                            border-bottom: 1px solid rgba(0, 0, 0, 0.20);
 
-                            .info-cart-products {
+                            .cart-products {
                                 display: flex;
-                                justify-content: space-between;
-                                flex: 0.8;
+                                min-height: 180px;
+                                justify-content: flex-start;
+                                align-items: center;
+                                padding: 10px 1.5rem;
+                                border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 
-                                .titulo-producto {
-                                    font-size: 20px;
+
+                                .img-producto {
+                                    /* box-sizing: content-box; */
+                                    /* margin-right: 20px; */
+                                    /* padding: 10px; */
+
+                                    width: 130px;
+                                    height: 130px;
+
+                                    img {
+                                        object-fit: cover;
+                                        width: 100%;
+                                        height: 100%;
+                                        aspect-ratio: 2000 / 2389;
+                                    }
                                 }
 
-                                .precio-carrito {
-                                    font-weight: 700;
-                                    font-size: 20px;
-                                    margin-left: 10px;
+                                .info-container {
+                                    width: 100%;
+                                    display: flex;
+                                    justify-content: space-evenly;
+                                    flex-direction: column;
+                                    gap: 50px;
+
+
+                                    .info-cart-products {
+                                        display: flex;
+                                        flex-direction: row;
+                                        padding-left: 30px;
+                                        justify-content: space-between;
+                                        align-items: flex-end;
+
+                                        /* height: 100%; */
+
+
+                                        .titulo-producto {
+                                            width: 150px;
+                                            font-weight: 500;
+                                            text-transform: uppercase;
+                                            font-size: 13px;
+                                            font-family: Montserrat;
+                                            text-align: left;
+                                        }
+
+                                        .precio-carrito {
+                                            font-weight: 500;
+                                            font-size: 17px;
+                                            font-family: Montserrat;
+
+                                        }
+
+                                        .control {
+                                            align-items: center;
+                                            border: 1px solid rgb(224, 220, 220);
+
+                                            border-radius: 5px;
+                                            padding: 1px;
+
+                                            .cantidad-productos {
+                                                font-weight: 400;
+                                                font-size: 17px;
+                                                font-family: Montserrat;
+
+                                            }
+
+                                            .btn {
+                                                font-family: Raleway;
+                                                font-size: 20px;
+
+                                                padding: 5px;
+                                                gap: none;
+
+                                                border: none;
+                                                background-image: none;
+                                                background-color: #fff;
+                                                cursor: pointer;
+                                            }
+                                        }
+
+                                        .remove {
+                                            cursor: pointer;
+                                            font-weight: 500;
+                                            font-size: 12px;
+                                            font-family: Montserrat;
+                                            text-decoration: underline;
+                                            transition: 0.5s ease;
+
+                                            &:hover {
+                                                color: lightslategray;
+                                                text-shadow: 0 0 1px white;
+                                            }
+                                        }
+
+                                    }
                                 }
 
-                                .cantidad-productos {
-                                    font-weight: 400;
-                                    font-size: 20px;
-                                }
                             }
 
-                            .close-icon {
-                                .material-symbols-outlined {
-                                    color: black;
-                                    font-size: 25px;
-                                    cursor: pointer;
-                                }
-                            }
 
+                        }
 
+                        .hidden {
+                            display: none;
                         }
 
                         .cart-total {
                             display: flex;
-                            justify-content: center;
-                            padding: 20px 0;
+                            flex-direction: column;
+                            /* position: relative; */
+                            /* top: 75%; */
+                            height: 25%;
+                            display: flex;
+                            justify-content: space-between;
+                            padding: 25px 20px;
                             gap: 20px;
                             align-items: center;
 
-                            h3 {
-                                font-size: 20px;
-                                font-weight: 700;
+                            border-top: 1px solid rgba(0, 0, 0, 0.3);
+
+                            .cont {
+                                display: flex;
+                                justify-content: space-between;
+                                width: 100%;
+                                align-items: center;
+
+                                h3 {
+                                    font-size: 14px;
+                                    font-weight: 500;
+                                    font-family: Raleway;
+
+                                }
+
+                                .total-pagar {
+                                    font-size: 14px;
+                                    font-weight: 700;
+                                    font-family: Montserrat;
+                                }
+
                             }
 
-                            .total-pagar {
-                                font-size: 20px;
-                                font-weight: 900;
+                            .cont-btn {
+                                width: 100%;
+
+                                button {
+                                    padding: 10px 30px;
+                                    width: 100%;
+                                    background-color: black;
+                                    color: white;
+
+                                    font-family: Raleway;
+                                    font-size: 15px;
+                                    font-weight: 700;
+
+                                    text-transform: uppercase;
+                                    cursor: pointer;
+
+                                    transition: 0.2s ease;
+
+                                    &:hover {
+                                        color: black;
+                                        background-color: white;
+                                    }
+
+                                    &:active {
+                                        background-color: rgb(235, 235, 235);
+                                        color: black;
+                                        text-shadow: 0 0 1px white;
+                                        transition: none;
+        
+                                    }
+
+                                }
                             }
                         }
+
+
+                        .hidden {
+                            display: none;
+                        }
+
+                        .cart-empty {
+                            position: relative;
+                            bottom: 45%;
+
+                            padding: 20px;
+                            text-align: center;
+
+                            font-family: var(--s-font);
+                            font-size: 25px;
+                            font-weight: bold;
+
+                            text-align: left;
+
+                            .cart-empty-btn {
+                                background-color: #fff;
+
+                                margin-top: 20px;
+                                padding: 10px;
+                                width: 100%;
+
+                                border-radius: none;
+                                border: 1px solid black;
+                                cursor: pointer;
+
+
+                                font-family: var(--p-font);
+                                font-size: 20px;
+                                font-weight: 700;
+                                text-transform: uppercase;
+
+                                transition: 0.3s ease;
+
+                                &:hover {
+                                    background-color: black;
+                                    color: white;
+                                }
+
+                                &:active {
+                                    background-color: rgb(197, 191, 191);
+                                    color: white;
+                                    text-shadow: 0 0 1px white;
+                                    transition: none;
+            
+                                }
+                            }
+                        }
+
                     }
-                    
+
+                    /* para ocultar el carrito */
+                    .hidden-cart {
+                        display: none;
+                    }
+
+
                 }
             }
         }
     }
 }
+
+.container-cart-products .row-product {
+    max-height: 300px;
+    /* Altura máxima para el contenedor */
+    overflow-y: auto;
+    /* Agrega scroll vertical cuando sea necesario */
+    scrollbar-width: thin;
+    /* Para navegadores Firefox */
+    scrollbar-color: #888 #f1f1f1;
+    /* Color del scroll para Firefox */
+}
+
+/* Estilo para el scroll en navegadores WebKit (Chrome, Safari, Edge) */
+.container-cart-products .row-product::-webkit-scrollbar {
+    width: 8px;
+    /* Ancho del scroll */
+}
+
+.container-cart-products .row-product::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* Color de fondo del track */
+}
+
+.container-cart-products .row-product::-webkit-scrollbar-thumb {
+    background: #888;
+    /* Color del thumb (la barra que se mueve) */
+    border-radius: 4px;
+    /* Bordes redondeados del thumb */
+}
+
+.container-cart-products .row-product::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    /* Color del thumb al pasar el mouse */
+}
+
+
 
 @keyframes enhance_header {
     to {
