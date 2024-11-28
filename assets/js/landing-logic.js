@@ -110,7 +110,7 @@ function showHTML() {
         const containerProduct = document.createElement('div');
         containerProduct.classList.add('cart-products');
         containerProduct.innerHTML = `
-             <div class="info-cart-products">
+            <div class="info-cart-products">
                 <div class="img-producto">
                 <img src="${product.image}" alt="${product.title}">
                 </div>
