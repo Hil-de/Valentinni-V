@@ -198,14 +198,14 @@ function showHTML() {
         containerProduct.innerHTML = `
             <div class="info-cart-products">
                 <div class="img-producto">
-                    <a href="/assets/pages/products.html?id=${product.id}">
-                        <img src="${product.image}" alt="${product.title}">
-                    </a>
+                <img src="${product.image}" alt="${product.title}">
                 </div>
             </div>
             <div class="info-container">
                 <div class="info-cart-products">
-                    <p class="titulo-producto">${product.title}</p>
+                    <a href="/assets/pages/products.html?id=${product.id}">
+                        <p class="titulo-producto">${product.title}</p>
+                    </a>
                     <span class="precio-carrito">${product.price}</span>
                 </div>
                 <div class="info-cart-products">

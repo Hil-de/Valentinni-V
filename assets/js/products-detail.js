@@ -213,7 +213,7 @@ const showHTML = () => {
                     </div>
                 </div>
 
-                <div class="info-container">[]
+                <div class="info-container">
                     <div class="info-cart-products">
                         <p class="titulo-producto">${product.title}</p>
                         <span class="precio-carrito">${product.price}</span>
