@@ -1,20 +1,3 @@
-// logica del carrito de compras 
-
-//funcion para cambiar color al navbar 
-
-window.addEventListener('scroll', function () {
-    const scrollY = window.scrollY;
-    const links = document.querySelectorAll('.a_container a');
-
-    links.forEach(link => {
-        if (scrollY > 100) {
-            link.style.setProperty('--line_color', '#FFFFFF');
-        } else {
-            link.style.setProperty('--line_color', getComputedStyle(document.documentElement).getPropertyValue('#000000'));
-        }
-    });
-});
-
 
 const btnCart = document.querySelector('.btn-cart');
 const rowProduct = document.querySelector('.row-product');
@@ -26,17 +9,64 @@ const countProducts = document.querySelector('#contador');
 const containerCartProducts = document.querySelector('.container-cart-products');
 
 btnCart.addEventListener('click', () => {
-    containerCartProducts.classList.toggle('hidden-cart')
-})
+    // Esto muestra y oculta el carrito al hacer clic en el ícono del carrito
+    containerCartProducts.classList.toggle('hidden-cart');
+});
 
-// logica para mostrar tarjetas con los productos 
 
+
+// Generamos un cartId único para la sesión (si no existe)
+let cartId = sessionStorage.getItem('cartId');
+if (!cartId) {
+    cartId = 'cart_' + Math.random().toString(36).substr(2, 9); // Generamos un ID único
+    sessionStorage.setItem('cartId', cartId); // Lo guardamos en sessionStorage
+}
+
+// Función para obtener el carrito desde el backend
+async function getCartFromBackend() {
+    try {
+        const response = await fetch(`http://localhost:5000/api/cart/${cartId}`);
+        const data = await response.json();
+        if (data) {
+            allProducts = data.products || [];
+            showHTML(); // Actualizar la vista del carrito
+        }
+    } catch (error) {
+        console.error("Error al hacer la solicitud al backend: ", error);
+    }
+}
+
+// Llamamos a esta función para obtener el carrito cuando se carga la página
+getCartFromBackend();
+
+// Función para guardar el carrito en el backend
+async function saveCartToBackend() {
+    try {
+        const response = await fetch('http://localhost:5000/api/cart', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                cartId,
+                products: allProducts,
+            }),
+        });
+
+        const data = await response.json();
+        console.log("Carrito guardado", data);
+    } catch (error) {
+        console.error("Error al guardar el carrito en el backend: ", error);
+    }
+}
+
+
+// lógica para mostrar tarjetas con los productos 
 const pageTitleElement = document.querySelector('.title-container h1');
 const pageDescriptionElement = document.querySelector('.title-container p');
 
 // Obtener el nombre de la página actual desde la URL
 const currentPage = window.location.pathname.split('/').pop();  // Extrae el nombre del archivo, ej. 'rings.html' o 'necklaces.html'
-
 
 // seleccion de la categoria dependiendo de la pagina. 
 let category = "";
@@ -77,7 +107,7 @@ fetch('/assets/json/produts.json')
             filteredProducts.forEach(product => {
                 const productCard = `
                     <li class="prod-card">
-                        <a href="/assets/pages/products.html?id=${product.id}">
+                        <a href="/assets/pages/products.html?id=${product.id}" data-id="${product.id}">
                             <div class="prod-img-content">
                                 <img class="p-img" src="${product.img}" alt="${product.name}">
                                 <img class="hover-img" src="${product.hoverImg}" alt="${product.name}">
@@ -103,13 +133,13 @@ fetch('/assets/json/produts.json')
 
 let allProducts = [];
 
-
-// Lógica para agregar al carrito (modificada para incluir el `id`)
+// Función para agregar productos al carrito
 productsList.addEventListener('click', e => {
     if (e.target.classList.contains('bag-btn')) {
         const productElement = e.target.closest('li');
+        const productId = productElement.querySelector('a').getAttribute('data-id');
         const infoProduct = {
-            id: productElement.querySelector('a').href.split('=')[1],  // Obtener el `id` desde la URL
+            id: productId,
             quantity: 1,
             title: productElement.querySelector('.prod-name').textContent,
             price: productElement.querySelector('.prod-price').textContent,
@@ -132,9 +162,11 @@ productsList.addEventListener('click', e => {
         }
 
         showHTML();  // Actualiza la vista del carrito
+        saveCartToBackend(); // Guardar el carrito en MongoDB
     }
 });
 
+// Lógica para eliminar productos del carrito
 rowProduct.addEventListener('click', e => {
     // Si se hace clic en el botón de eliminar producto
     if (e.target.classList.contains('remove')) {
@@ -144,6 +176,7 @@ rowProduct.addEventListener('click', e => {
         // Eliminar el producto del carrito
         allProducts = allProducts.filter(product => product.title !== title.trim());
         showHTML();  // Actualiza la vista del carrito
+        saveCartToBackend(); // Guardar los cambios en MongoDB
     }
 
     // Si se hace clic en el botón de aumentar la cantidad "+"
@@ -156,6 +189,7 @@ rowProduct.addEventListener('click', e => {
         if (currentProduct) {
             currentProduct.quantity++;
             showHTML();  // Actualiza la vista del carrito
+            saveCartToBackend(); // Guardar los cambios en MongoDB
         }
     }
 
@@ -169,14 +203,20 @@ rowProduct.addEventListener('click', e => {
         if (currentProduct && currentProduct.quantity > 1) {
             currentProduct.quantity--;  // Solo reducir si la cantidad es mayor que 1
             showHTML();  // Actualiza la vista del carrito
+            saveCartToBackend(); // Guardar los cambios en MongoDB
         }
     }
 });
 
-
 // Función para mostrar el contenido del carrito (actualizada para usar el `id`)
 function showHTML() {
-    if (allProducts.length === 0) {
+    const cartEmpty = document.querySelector('.cart-empty');
+    const rowProduct = document.querySelector('.row-product');
+    const cartTotal = document.querySelector('.cart-total');
+    const valorTotal = document.querySelector('.total-pagar');
+    const countProducts = document.querySelector('#contador');
+
+    if (!allProducts.length) {
         cartEmpty.classList.remove('hidden');
         rowProduct.classList.add('hidden');
         cartTotal.classList.add('hidden');
@@ -186,8 +226,7 @@ function showHTML() {
         cartTotal.classList.remove('hidden');
     }
 
-    // Limpiar el contenido previo del carrito
-    rowProduct.innerHTML = '';
+    rowProduct.innerHTML = '';  // Limpiar el carrito antes de agregar los nuevos productos
 
     let total = 0;
     let totalItems = 0;
@@ -196,16 +235,14 @@ function showHTML() {
         const containerProduct = document.createElement('div');
         containerProduct.classList.add('cart-products');
         containerProduct.innerHTML = `
-            <div class="info-cart-products">
+            < <div class="info-cart-products">
                 <div class="img-producto">
                 <img src="${product.image}" alt="${product.title}">
                 </div>
             </div>
             <div class="info-container">
                 <div class="info-cart-products">
-                    <a href="/assets/pages/products.html?id=${product.id}">
                         <p class="titulo-producto">${product.title}</p>
-                    </a>
                     <span class="precio-carrito">${product.price}</span>
                 </div>
                 <div class="info-cart-products">
@@ -220,12 +257,10 @@ function showHTML() {
         `;
         rowProduct.appendChild(containerProduct);
 
-        // Calcular el total
-        total += parseFloat(product.price.slice(1)) * product.quantity;  // Eliminar "$" y calcular el total
+        total += parseFloat(product.price.slice(1)) * product.quantity;
         totalItems += product.quantity;
     });
 
-    // Actualizar el total y el contador de productos
     valorTotal.innerText = `$${total.toFixed(2)}`;
     countProducts.innerText = totalItems;
 }

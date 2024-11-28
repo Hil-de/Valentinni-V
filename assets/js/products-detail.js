@@ -1,4 +1,10 @@
-// logica para las paginas de detalle de cada producto con HTML dinamico 
+
+const cartEmpty = document.querySelector('.cart-empty');
+const rowProduct = document.querySelector('.row-product');
+const cartTotal = document.querySelector('.cart-total');
+const valorTotal = document.querySelector('.total-pagar');
+const countProducts = document.querySelector('#contador');
+
 
 // Ruta al archivo JSON
 const jsonFilePath = '/assets/json/produts.json';
@@ -63,11 +69,6 @@ async function loadProductDetails() {
 // Llamar a la función al cargar la página
 document.addEventListener('DOMContentLoaded', loadProductDetails);
 
-// Logica del carrito de compras 
-
-
-// logica del carrito de compras 
-
 //funcion para cambiar color al navbar 
 
 window.addEventListener('scroll', function () {
@@ -82,6 +83,8 @@ window.addEventListener('scroll', function () {
         }
     });
 });
+
+
 //funcion para cambiar color al navbar 
 
 //ocultar carrito de compras
@@ -93,27 +96,54 @@ btnCart.addEventListener('click', () => {
 containerCartProducts.classList.toggle('hidden-cart')
 })
 
-/* ========================= */
-const cartInfo = document.querySelector('.cart-products');
-const rowProduct = document.querySelector('.row-product');
-const cartEmpty = document.querySelector('.cart-empty');
-const cartTotal = document.querySelector('.cart-total');
 
-// Lista de todos los contenedores de productos
-const productsList = document.querySelector('.prod-list-container');
+// Generamos un cartId único para la sesión (si no existe)
+let cartId = sessionStorage.getItem('cartId');
+if (!cartId) {
+    cartId = 'cart_' + Math.random().toString(36).substr(2, 9); // Generamos un ID único
+    sessionStorage.setItem('cartId', cartId); // Lo guardamos en sessionStorage
+}
 
-// Variable de arreglos de Productos
-let allProducts = [];
+// Función para obtener el carrito desde el backend
+async function getCartFromBackend() {
+    try {
+        const response = await fetch(`http://localhost:5000/api/cart/${cartId}`);
+        const data = await response.json();
+        if (data) {
+            allProducts = data.products || [];
+            showHTML(); // Actualizar la vista del carrito
+        }
+    } catch (error) {
+        console.error("Error al hacer la solicitud al backend: ", error);
+    }
+}
 
-const valorTotal = document.querySelector('.total-pagar');
+// Llamamos a esta función para obtener el carrito cuando se carga la página
+getCartFromBackend();
 
-const countProducts = document.querySelector('#contador');
+// Función para guardar el carrito en el backend
+async function saveCartToBackend() {
+    try {
+        const response = await fetch('http://localhost:5000/api/cart', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                cartId,
+                products: allProducts,
+            }),
+        });
 
+        const data = await response.json();
+        console.log("Carrito guardado", data);
+    } catch (error) {
+        console.error("Error al guardar el carrito en el backend: ", error);
+    }
+}
 
-// agregar datos al carrito en la pagina de detalles de productos 
-
+// Lógica para agregar productos al carrito en la página de detalles del producto
 const addToBagButtons = document.querySelectorAll('.ad_to_bag_buttom');
-
 addToBagButtons.forEach(button => {
     button.addEventListener('click', (e) => {
         const productContainer = e.target.closest('.products_details_container');
@@ -144,102 +174,103 @@ addToBagButtons.forEach(button => {
 
         // Actualizar la interfaz del carrito
         showHTML();
+        saveCartToBackend(); // Guardar el carrito en MongoDB
     });
 });
 
+// Función para mostrar el contenido del carrito
+function showHTML() {
 
-
-// Eliminar productos 
-rowProduct.addEventListener('click', e => {
-	if (e.target.classList.contains('remove')){
-        const product = e.target.closest('.cart-products');
-        const title = product.querySelector('.titulo-producto').textContent;
-
-        allProducts = allProducts.filter(
-            product => product.title !== title.trim()
-        );
-
-        console.log(allProducts);
-
-        showHTML();
-    }
-
-    // Modificar la cantidad de productos
-    if (e.target.classList.contains('plus') || e.target.classList.contains('minus')) {
-        const product = e.target.closest('.cart-products');
-        const title = product.querySelector('.titulo-producto').textContent;
-        const currentProduct = allProducts.find(p => p.title === title.trim());
-
-        if (e.target.classList.contains('plus')) {
-            currentProduct.quantity++;
-        } else if (e.target.classList.contains('minus') && currentProduct.quantity > 1) {
-            currentProduct.quantity--;
-        }
-
-        showHTML();  // Actualiza la vista del carrito
-    }
-});
-
-// Funcion para mostrar  HTML
-const showHTML = () => {
-    // verifica si no hay productos
     if (!allProducts.length) {
-        // Mostrar mensaje de carrito vacío
         cartEmpty.classList.remove('hidden');
         rowProduct.classList.add('hidden');
         cartTotal.classList.add('hidden');
     } else {
-        // Ocultar mensaje de carrito vacío
         cartEmpty.classList.add('hidden');
         rowProduct.classList.remove('hidden');
         cartTotal.classList.remove('hidden');
     }
-    // Limpiar HTML
-    rowProduct.innerHTML = '';
+
+    rowProduct.innerHTML = '';  // Limpiar el carrito antes de agregar los nuevos productos
 
     let total = 0;
-    let totalOfProducts = 0;
+    let totalItems = 0;
 
     allProducts.forEach(product => {
         const containerProduct = document.createElement('div');
         containerProduct.classList.add('cart-products');
-
         containerProduct.innerHTML = `
+            <div class="info-cart-products">
+                <div class="img-producto">
+                <img src="${product.image}" alt="${product.title}">
+                </div>
+            </div>
+            <div class="info-container">
                 <div class="info-cart-products">
-                    <div class="img-producto">
-                        <a href="/assets/pages/products.html?id=${product.id}">
-                        <img src="${product.image}" alt="${product.title}">
-                    </a>
-                    </div>
-                </div>
-
-                <div class="info-container">
-                    <div class="info-cart-products">
                         <p class="titulo-producto">${product.title}</p>
-                        <span class="precio-carrito">${product.price}</span>
-                    </div>
-                    <div class="info-cart-products">
-                        <div class="control">
-                            <button class="btn minus">-</button>
-                            <span class="cantidad-productos">${product.quantity}</span>
-                            <button class="btn plus">+</button>
-                        </div>
-                        <span class="remove">Remove</span>
-                    </div>
+                    <span class="precio-carrito">${product.price}</span>
                 </div>
-
+                <div class="info-cart-products">
+                    <div class="control">
+                        <button class="btn minus">-</button>
+                        <span class="cantidad-productos">${product.quantity}</span>
+                        <button class="btn plus">+</button>
+                    </div>
+                    <span class="remove">Remove</span>
+                </div>
+            </div>
         `;
+        rowProduct.appendChild(containerProduct);
 
-        rowProduct.append(containerProduct);
-
-        total = total + parseInt(product.quantity * product.price.slice(1));
-        totalOfProducts = totalOfProducts + product.quantity;
+        total += parseFloat(product.price.slice(1)) * product.quantity;
+        totalItems += product.quantity;
     });
 
-    valorTotal.innerText = `$${total}`;
-    countProducts.innerText = totalOfProducts;
-};
+    valorTotal.innerText = `$${total.toFixed(2)}`;
+    countProducts.innerText = totalItems;
+}
 
+// Lógica para eliminar productos del carrito
+rowProduct.addEventListener('click', e => {
+    // Si se hace clic en el botón de eliminar producto
+    if (e.target.classList.contains('remove')) {
+        const product = e.target.closest('.cart-products');
+        const title = product.querySelector('.titulo-producto').textContent;
+
+        // Eliminar el producto del carrito
+        allProducts = allProducts.filter(product => product.title !== title.trim());
+        showHTML();  // Actualiza la vista del carrito
+        saveCartToBackend(); // Guardar los cambios en MongoDB
+    }
+
+    // Si se hace clic en el botón de aumentar la cantidad "+"
+    if (e.target.classList.contains('plus')) {
+        const product = e.target.closest('.cart-products');
+        const title = product.querySelector('.titulo-producto').textContent;
+        
+        // Encontrar el producto en el carrito y aumentar la cantidad
+        const currentProduct = allProducts.find(p => p.title === title.trim());
+        if (currentProduct) {
+            currentProduct.quantity++;
+            showHTML();  // Actualiza la vista del carrito
+            saveCartToBackend(); // Guardar los cambios en MongoDB
+        }
+    }
+
+    // Si se hace clic en el botón de reducir la cantidad "-"
+    if (e.target.classList.contains('minus')) {
+        const product = e.target.closest('.cart-products');
+        const title = product.querySelector('.titulo-producto').textContent;
+
+        // Encontrar el producto en el carrito
+        const currentProduct = allProducts.find(p => p.title === title.trim());
+        if (currentProduct && currentProduct.quantity > 1) {
+            currentProduct.quantity--;  // Solo reducir si la cantidad es mayor que 1
+            showHTML();  // Actualiza la vista del carrito
+            saveCartToBackend(); // Guardar los cambios en MongoDB
+        }
+    }
+});
 
 
 
