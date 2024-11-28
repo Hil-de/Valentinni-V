@@ -14,6 +14,21 @@ btnCart.addEventListener('click', () => {
 });
 
 
+//funcion para cambiar color al navbar 
+
+window.addEventListener('scroll', function () {
+    const scrollY = window.scrollY;
+    const links = document.querySelectorAll('.a_container a');
+
+    links.forEach(link => {
+        if (scrollY > 100) {
+            link.style.setProperty('--line_color', '#FFFFFF');
+        } else {
+            link.style.setProperty('--line_color', getComputedStyle(document.documentElement).getPropertyValue('#000000'));
+        }
+    });
+});
+
 
 // Generamos un cartId único para la sesión (si no existe)
 let cartId = sessionStorage.getItem('cartId');
